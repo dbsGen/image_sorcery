@@ -4,8 +4,8 @@ $:.unshift lib unless $:.include?(lib)
 require 'bundler/version'
 
 Gem::Specification.new do |s|
-  s.name           = "image_sorcery"
-  s.version        = "1.1.0"
+  s.name           = "image_sorcery-myboka"
+  s.version        = "1.1.1"
   s.platform       = Gem::Platform::RUBY
   s.authors        = ["Eric Rafaloff", "Guy Boertje"]
   s.email          = ["hello@ericrafaloff.com", "guy@musicglue.com"]

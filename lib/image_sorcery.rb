@@ -24,11 +24,13 @@ class ImageSorcery
   # Runs ImageMagick's 'composite'.
   # See http://www.imagemagick.org/script/composite.php
   #
-  def composite!(output, args={})
+  def composite(overlap, output, args={})
     tokens  = ["composite"]
     tokens << convert_to_arguments(args) if args
+    tokens << " #{overlap}"
     tokens << " '#{@file}#{"[#{args[:layer].to_s}]" if args[:layer]}'"
     tokens << " -annotate #{args[:annotate].to_s}" if args[:annotate]
+    tokens << " #{output}"
     tokens  = convert_to_command(tokens)
     success = run(tokens)[1]
     success
